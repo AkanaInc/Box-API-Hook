@@ -133,7 +133,7 @@ Then the /helloworld Operation in the VS was mapped to the GET /users/me operati
 
 Go to the Box_API_Hook_Helloworld VS -> Operations Tab -> GET /hellowworld operation -> Process tab you'll see this image:
 ![Helloworld process] 
-(https://github.com/pogo61/Box-API-Hook/blob/master/Box%20API%20Hook.png)
+(https://github.com/AkanaInc/Box-API-Hook/blob/master/Box%20API%20Hook.png)
 
 Double click on the Process activity to see that it call's the Heloworld Process, which call's an invoke on the GET /users/me operation to make the Hello World operation call successful.
 
