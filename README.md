@@ -36,6 +36,7 @@ API Hook using Akana's Products to Merge both the Box Content and Box Upload API
     + run the configurator for all the PM and ND instances:
         + for each instance delete the /{akanainstallroot}/{sm7.2}/instances/{instanceName}/cache directory.  This is important to do before you run the below command. 
         + run this command, depending on whether you are running on Windows or Linux:
+        + 
             Windows: 
             ```
             [Gateway base dir]\sm70\bin>startup.bat configurator "-Dsilent=true" "
@@ -104,24 +105,28 @@ API Hook using Akana's Products to Merge both the Box Content and Box Upload API
 #### Verify Connectivity
 - Using curl -H "authKey:<the value authKey>" http://"URL of the Listener of your ND"/box_api_hook/helloworld
 - The correct response should be a JSON object listing the details of the user owning the credentials being used to make the call:
-{
-    "address": "",
-    "avatar_url": "https://app.box.com/api/avatar/large/229214787",
-    "created_at": "2014-12-15T01:12:03-08:00",
-    "id": "229214787",
-    "job_title": "",
-    "language": "en",
-    "login": "paul.pogonoski@soa.com",
-    "max_upload_size": 2147483648,
-    "modified_at": "2015-03-16T21:49:50-07:00",
-    "name": "Paul Pogonoski",
-    "phone": "+61416101363",
-    "space_amount": 10737418240,
-    "space_used": 790,
-    "status": "active",
-    "timezone": "Australia/Sydney",
-    "type": "user"
-}
+ 
+```
+        {
+            "address": "",
+            "avatar_url": "https://app.box.com/api/avatar/large/229214787",
+            "created_at": "2014-12-15T01:12:03-08:00",
+            "id": "229214787",
+            "job_title": "",
+            "language": "en",
+            "login": "paul.pogonoski@soa.com",
+            "max_upload_size": 2147483648,
+            "modified_at": "2015-03-16T21:49:50-07:00",
+            "name": "Paul Pogonoski",
+            "phone": "+61416101363",
+            "space_amount": 10737418240,
+            "space_used": 790,
+            "status": "active",
+            "timezone": "Australia/Sydney",
+            "type": "user"
+        }
+```
+        
 
 *Note: the authKey in the curl request, above, is retrieved by using the process in the [Dropbox 3-legged OAuth Client.pdf] (https://github.com/pogo61/Dropbox-API-Hook/blob/master/src/Dropbox%203-legged%20OAuth%20Client.pdf) file in the /src directory*
 
