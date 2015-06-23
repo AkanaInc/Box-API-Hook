@@ -4,13 +4,16 @@
 [Akana.com](http://akana.com)
 
 ## Box-API-Hook
-API Hook using SOA Software's Products to Merge both the Box Content and Box Upload API's into a single API, as well as integrate and hide the Box OAuth Auth steps. 
+API Hook using Akana's Products to Merge both the Box Content and Box Upload API's into a single API, as well as integrate and hide the Box OAuth Auth steps. 
 
 ## BOX API 
 ### About the API
 - The Box Content API gives you access to the content management features you see in our web app and lets you extend them for use in your own app.
 - API Documentation: [Box Content API docs] (https://developers.box.com/docs/)
 
+### Akana Versions
+- 7.2.*
+    
 ### Pre-Reqs
 - Create a Box Developer account at [Box Developers] (https://app.box.com/developers/services) and define your App.
     - Click on the "Create a Box Application" right hand menu item
@@ -30,19 +33,29 @@ API Hook using SOA Software's Products to Merge both the Box Content and Box Upl
     + unzip the com.akana.pso.apihooks.technology.preview_7.2.90.zip (available in this repository) into the <Policy Manager Home>/sm70 directory
     + unzip the com.akana.pso.persistence_7.2.0.zip (available in this repository) into the <Policy Manager Home>/sm70 directory.
     + stop all PM and ND(s)
-    + run the configurator in update mode for all the PM and ND instances:
+    + run the configurator for all the PM and ND instances:
+        + for each instance delete the /{akanainstallroot}/{sm7.2}/instances/{instanceName}/cache directory.  This is important to do before you run the below command. 
         + run this command, depending on whether you are running on Windows or Linux:
             Windows: 
+```
             [Gateway base dir]\sm70\bin>startup.bat configurator "-Dsilent=true" "-DdeploymentName=Standalone" "-Dproperties=C:/<property file directory location>/myprops.properties" 
+```
      
-            UNIX 
+            UNIX :
+```
             [Gateway base dir]/sm70/bin>startup.sh configurator "-Dsilent=true" "-DdeploymentName=Standalone" "-Dproperties=/export/home/username/<property file directory location>\myprops.properties"
+        
+```
         + the myprops.properties path must be the fully qualified path, and the file contnents will look like:
+          
+```          
             container.instance.name=[intance name, e.g. PM]
             credential.username = [administrator login] 
             credential.password = [administrator password] 
             default.host=[instance Host, e.g. localhost] 
             default.port=[instance Port, e.g. 9905]
+```
+
     + Using the SOA Admin Console, install the following Plug-ins in each PM container:
         * Akana PSO Persistence
     + Using the SOA Admin Console, install the following Plug-ins in each ND container:
