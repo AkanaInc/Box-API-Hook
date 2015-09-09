@@ -97,7 +97,7 @@ API Hook using Akana's Products to Merge both the Box Content and Box Upload API
     - save the changes
     - click on the "Activate Policy" workflow activity in the righ-hand Activities portlet
     - ensure that the status changes to "State: Active"
-- Go to Google Sheets API Hook -> Policies -> Operational Policies ->    AddAuthToken policy
+- Go to Box API Hook -> Policies -> Operational Policies ->    AddAuthToken policy
     - click on the "Activate Policy" workflow activity in the righ-hand Activities portlet
     - ensure that the status changes to "State: Active"
 
